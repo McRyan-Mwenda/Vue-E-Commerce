@@ -1,6 +1,7 @@
 <script setup>
 import { RouterView } from "vue-router";
 import NavBar from "./components/NavBar.vue";
+import PageFooter from "./components/PageFooter.vue";
 </script>
 
 <template>
@@ -10,16 +11,7 @@ import NavBar from "./components/NavBar.vue";
     <RouterView />
   </main>
 
-  <footer class="px-2 py-4">
-    <div class="flex flex-row">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="flex flex-row">
-      <div></div>
-      <div></div>
-    </div>
-  </footer>
+  <PageFooter />
 </template>
 
 <style scoped>

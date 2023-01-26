@@ -194,7 +194,7 @@ import { RouterLink } from "vue-router";
   display: none;
 }
 .ddw-1 {
-  width: 800px !important;
+  width: 750px !important;
 }
 .ddw-2 {
   width: 200px !important;
