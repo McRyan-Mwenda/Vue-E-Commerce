@@ -153,38 +153,64 @@ import { RouterLink } from "vue-router";
           >
         </div>
       </div>
-      <RouterLink
-        to="/"
-        class="mr-4 border-1 bg-sky-300 py-1 px-2 rounded-md text-black"
-        >Cart <i class="bi bi-cart4 text-xl text-black"></i>
-        <span class="rounded-full px-1 py-0 ml-2 bg-sky-700 text-gray-200"
-          >29</span
-        ></RouterLink
+      <p
+        class="mr-4 hover:text-black text-gray-600 hover:cursor-pointer"
+        @click="openModal"
       >
+        <i class="bi bi-search text-xl text-gray-300 hover:text-white"></i>
+      </p>
     </div>
-    <form class="flex items-center">
+    <RouterLink
+      to="/"
+      class="mr-4 border border-sky-800 bg-sky-300 py-1 px-2 rounded-md text-gray-600 drop-shadow-lg cart-button"
+      >Cart <i class="bi bi-cart4 text-xl text-gray-600 cart-icon"></i>
+      <span
+        class="rounded-full px-1 ml-2 bg-sky-700 text-gray-200 cart-item-count"
+        >29</span
+      ></RouterLink
+    >
+  </nav>
+
+  <!-- search modal -->
+  <div class="search-modal" id="searchModal" @click="closeModal">
+    <form class="flex items-center search-shadow rounded-md">
       <input
         type="text"
         name="search"
         placeholder="Search for product"
-        class="rounded-l-md border-y-2 border-l-2 border-sky-800 bg-gray-50 px-2 text-zinc-600 w-80 search-input"
+        class="rounded-l-md border-y-2 border-l-2 border-sky-800 bg-gray-50 p-2 text-zinc-600 search-input"
       />
       <button
         type="submit"
-        class="px-2 rounded-r-md border-y-2 border-r-2 border-sky-800 bg-sky-300 text-zinc-600 hover:text-black"
+        class="p-2 rounded-r-md border-y-2 border-r-2 border-sky-800 bg-sky-300 text-zinc-600 hover:text-black"
       >
         <i class="bi bi-search"></i> Search
       </button>
     </form>
-  </nav>
+  </div>
+  <!-- search modal -->
 </template>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    openModal() {
+      const modal = document.getElementById("searchModal");
+      modal.style.display = "block";
+    },
+    closeModal() {
+      const modal = document.getElementById("searchModal");
+      window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    },
+  },
+};
+</script>
 
 <style scoped>
-.search-input:focus {
-  outline: none !important;
-}
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
@@ -192,6 +218,7 @@ import { RouterLink } from "vue-router";
 .dropdown-content {
   background-color: #d4f1f4 !important;
   display: none;
+  z-index: 100 !important;
 }
 .ddw-1 {
   width: 750px !important;
@@ -201,5 +228,31 @@ import { RouterLink } from "vue-router";
 }
 .categories {
   width: 50% !important;
+}
+.search-input:focus {
+  outline: none !important;
+}
+.search-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(27, 50, 75);
+  background-color: rgba(27, 50, 75, 0.808);
+}
+.search-modal form {
+  width: fit-content;
+  margin: 0 auto;
+}
+.search-modal form input {
+  width: 500px;
+}
+.search-shadow {
+  box-shadow: 5px 5px 10px -5px skyblue !important;
 }
 </style>

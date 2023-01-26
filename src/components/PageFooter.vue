@@ -44,11 +44,11 @@ import { RouterLink } from "vue-router";
             type="text"
             name="search"
             placeholder="Your email address"
-            class="rounded-l-md border-y-2 border-l-2 border-sky-800 bg-gray-50 px-2 text-zinc-600 w-60 search-input"
+            class="rounded-l-md border-y-2 border-l-2 border-sky-800 bg-gray-50 p-2 text-zinc-600 w-60 search-input"
           />
           <button
             type="submit"
-            class="px-2 rounded-r-md border-y-2 border-r-2 border-sky-800 bg-sky-300 text-zinc-600 hover:text-black"
+            class="p-2 rounded-r-md border-y-2 border-r-2 border-sky-800 bg-sky-300 text-zinc-600 hover:text-black"
           >
             <i class="bi bi-newspaper"></i> Subscribe
           </button>
@@ -68,4 +68,8 @@ import { RouterLink } from "vue-router";
 
 <script></script>
 
-<style scoped></style>
+<style scoped>
+.search-input:focus {
+  outline: none !important;
+}
+</style>
