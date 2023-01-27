@@ -130,7 +130,7 @@ import { RouterLink } from "vue-router";
           <RouterLink to="/" class="px-1 my-1 hover:text-black"
             >Orders History</RouterLink
           >
-          <RouterLink to="/" class="px-1 my-1 hover:text-black"
+          <RouterLink to="/sign-up" class="px-1 my-1 hover:text-black"
             >Sign in / Sign up</RouterLink
           >
         </div>

@@ -18,3 +18,34 @@ html {
 .logo-font {
   font-family: "Rowdies", cursive !important;
 }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: large;
+}
+
+.form-input {
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: large;
+}
+
+.form-submit {
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  background-color: gray !important;
+  font-size: large;
+  color: whitesmoke;
+}
+
+.form-submit:hover {
+  background-color: rgb(102, 102, 102) !important;
+}
